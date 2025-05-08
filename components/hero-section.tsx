@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowDown, Code, Layers, Smartphone } from "lucide-react"
+import { Code, Layers, Smartphone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Geist } from "next/font/google"
@@ -97,7 +97,7 @@ export function HeroSection() {
             variants={itemVariants}
             className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-sm font-medium"
           >
-            <span className="relative flex h-2 w-2 mr-2">
+            <span className="relative flex h-4 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
@@ -176,19 +176,6 @@ export function HeroSection() {
           href="#about"
           className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
         >
-          <motion.div
-            animate={{
-              y: [0, 8, 0],
-              transition: {
-                duration: 2,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "loop",
-              },
-            }}
-            className="bg-white dark:bg-gray-800 rounded-full p-2 shadow-md"
-          >
-            <ArrowDown className="h-5 w-5" />
-          </motion.div>
         </Link>
       </motion.div>
     </section>

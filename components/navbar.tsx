@@ -66,7 +66,7 @@ export function Navbar() {
 
     if (element) {
       // Adjust scroll offset based on viewport width
-      const offset = window.innerWidth < 768 ? 60 : 80
+      const offset = window.innerWidth < 768 ? 60 : 40
       window.scrollTo({
         top: targetId === "top" ? 0 : element.offsetTop - offset,
         behavior: "smooth",
@@ -87,13 +87,13 @@ export function Navbar() {
         variant="ghost"
         size="icon"
         onClick={toggleTheme}
-        className="ml-2 text-gray-900 dark:text-white hover:text-emerald-800 dark:hover:text-emerald-300"
+        className="ml-1 text-gray-900 dark:text-white hover:text-emerald-800 dark:hover:text-emerald-300 h-7 w-7"
         aria-label="Toggle theme"
       >
         {theme === "dark" ? (
-          <Sun className="h-[18px] w-[18px] md:h-5 md:w-5" />
+          <Sun className="h-4 w-4" />
         ) : (
-          <Moon className="h-[18px] w-[18px] md:h-5 md:w-5" />
+          <Moon className="h-4 w-4" />
         )}
       </Button>
     )
@@ -123,16 +123,16 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
-          ? "bg-emerald-200 dark:bg-emerald-600 shadow-sm py-2 md:py-3"
-          : "bg-emerald-200 dark:bg-emerald-600 py-3 md:py-5"
+          ? "bg-emerald-200 dark:bg-emerald-600 shadow-sm py-1"
+          : "bg-emerald-200 dark:bg-emerald-600 py-1.5 md:py-2"
       }`}
     >
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex items-center justify-between h-12 md:h-auto">
+      <div className="container px-3 md:px-4 mx-auto">
+        <div className="flex items-center justify-between h-8 md:h-10">
           <Link
             href="#"
             onClick={(e) => handleNavClick(e, "#")}
-            className="text-xl md:text-2xl font-bold text-emerald-800 dark:text-emerald-300"
+            className="text-lg md:text-xl font-bold text-emerald-800 dark:text-emerald-300"
           >
             Ann<span className="text-gray-900 dark:text-white">Githinji</span>
           </Link>
@@ -144,7 +144,7 @@ export function Navbar() {
                 key={index}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="px-3 py-2 text-sm lg:text-base text-gray-900 dark:text-white hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors rounded-md"
+                className="px-2 py-1 text-sm text-gray-900 dark:text-white hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors rounded-md"
               >
                 {item.name}
               </Link>
@@ -153,7 +153,7 @@ export function Navbar() {
             {/* Theme Toggle */}
             {renderThemeToggle()}
 
-            <Button className="ml-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm lg:text-base">
+            <Button className="ml-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs md:text-sm h-7 px-2.5">
               <Link href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                 Hire Me
               </Link>
@@ -169,7 +169,7 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
@@ -185,19 +185,19 @@ export function Navbar() {
             variants={menuVariants}
             className="md:hidden bg-emerald-200 dark:bg-emerald-600 shadow-sm overflow-hidden"
           >
-            <div className="container px-4 py-3 mx-auto">
-              <nav className="flex flex-col space-y-1">
+            <div className="container px-3 py-2 mx-auto">
+              <nav className="flex flex-col space-y-0.5">
                 {navItems.map((item, index) => (
                   <Link
                     key={index}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="px-4 py-2 text-gray-900 dark:text-white hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors rounded-md"
+                    className="px-3 py-1.5 text-sm text-gray-900 dark:text-white hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors rounded-md"
                   >
                     {item.name}
                   </Link>
                 ))}
-                <Button className="mt-3 w-full bg-emerald-600 hover:bg-emerald-700 text-white">
+                <Button className="mt-2 w-full bg-emerald-600 hover:bg-emerald-700 text-white h-8 text-sm">
                   <Link href="#contact" onClick={(e) => handleNavClick(e, "#contact")} className="w-full text-center">
                     Hire Me
                   </Link>

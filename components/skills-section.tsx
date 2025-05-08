@@ -10,7 +10,7 @@ export function SkillsSection() {
       icon: <Code className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />,
       title: "Frontend Development",
       description: "Creating responsive and interactive user interfaces with modern frameworks",
-      technologies: ["Next.js", "React", "TypeScript", "HTML/CSS", "Tailwind CSS"],
+      technologies: ["Next.js", "TypeScript", "HTML/CSS", "Tailwind CSS"],
     },
     {
       icon: <Database className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />,
